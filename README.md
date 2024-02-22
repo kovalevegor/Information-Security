@@ -69,7 +69,7 @@ def decrypt(binary_list):
 """
 Created on Wed Feb 21 13:53:16 2024
 
-@author: gogak
+@author: Egor Kovalev
 """
 from tabulate import tabulate
 import random 
