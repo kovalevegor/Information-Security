@@ -83,7 +83,6 @@ keystream = [17, 23, 41, 12, ...]
 
 ```python
 cipher = plaintext ^ keystream
-cipher = [60, 82, 74, 99, ...]
 ```
 
 4. Печать результатов:
