@@ -8,3 +8,19 @@
 
 Используемые команды в программе
 ![help](help.png)
+Пример шифрования сообщения из файла: 
++ Открытый текст хранится в файле `plaintext.txt`
++ Ключи находятся в файле `keys.txt`
+
+Содержимое файла `plaintext.txt`
+```txt
+The world is cruel but I'm still loving you!
+```
+
+Содержимое файла `keys.txt`
+```txt
+1001
+1100
+```
+
+![enc](encrypted.png)
