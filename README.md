@@ -18,9 +18,10 @@ The world is cruel but I'm still loving you!
 ```
 
 Содержимое файла `keys.txt`
+
 ```txt
 1001
 1100
 ```
 
-![enc](encrypted.png)
+![enc](encryption.png)
