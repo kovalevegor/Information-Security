@@ -48,12 +48,9 @@ def encrypt(bin_list, keys, rounds, f_type):
   Returns:
     Зашифрованный текст (строка).
   """
-  # print(bin_list)
   if len(bin_list) % 2 != 0: bin_list.append('00000000')
   plaintext = ''.join(bin_list)
-  # print('plaintext ', plaintext,end='\n\n')
   l, r = plaintext[:len(plaintext) // 2], plaintext[len(plaintext) // 2:]
-  # print('l ', l,end='\n\n'); print('r ', r,end='\n\n')
   if rounds < 3: rounds = 3
   for i in range(rounds):
     if f_type == 0:
@@ -62,15 +59,12 @@ def encrypt(bin_list, keys, rounds, f_type):
         r_temp = r
         r = l
         l = xor(l_temp, r_temp)
-        # print('l ', l,end='\n\n'); print('r ', r,end='\n\n')
     elif f_type == 1:
         l_temp = l
         r_temp = r
         r = l_temp
         l = xor(l_temp, keys[i % len(keys)])
-        # print('keys[i % len(keys)] ', keys[i % len(keys)])
         l = xor(l, r_temp)
-        # print('l ', l,end='\n\n'); print('r ', r,end='\n\n')
     else:
       raise ValueError("Неверный тип функции f")
   return l + r
