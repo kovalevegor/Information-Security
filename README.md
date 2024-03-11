@@ -25,8 +25,6 @@ def xor(s1, key):
         s1 = s1.zfill(block_size)
         key = key.zfill(block_size)
     result = ""
-    # print('s ', s1)
-    # print('k ', key)
     for i in range(len(s1)):
         result += str(int(s1[i]) ^ int(key[i]))
     return result
