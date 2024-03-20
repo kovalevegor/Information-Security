@@ -39,7 +39,7 @@ int32_t entry0 (void) {
     int32_t var_10h;
     eax = 0;
     var_10h = eax;
-    eax = 0x43db88;
+    eax = 0x43db88;/* -> c8 57 fc ff eb f8 5d c3 1d 00 00 00 90 db 43 00 .W....J.......C.*/
     eax = fcn_00405ec4 ();
     eax = 0;
     *(fs:eax) = esp;
