@@ -134,3 +134,28 @@ int32_t fcn_0043db04 (int32_t arg_8h) {
     return eax;
 }
 ```
+
+```assembly
+/* jsdec pseudo code output */
+/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x4038b4 */
+#include <stdint.h>
+ 
+void fcn_004038b4 (void) {
+    edx = *(eax);
+    if (edx != 0) {
+        *(eax) = 0;
+        ecx = *((edx - 8));
+        ecx--;
+        if (ecx < 0) {
+            goto label_0;
+        }
+        *((edx - 8))--;
+        if (*((edx - 8)) != 0) {
+            goto label_0;
+        }
+        eax = edx - 8;
+        fcn_004026d0 ();
+    }
+label_0:
+}
+```
