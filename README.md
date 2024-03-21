@@ -111,32 +111,36 @@ uint32_t fcn_00407be0 (void) {
 ```
 
 ```assembly
+/*код представляет собой фрагмент программы, который инициализирует три переменные,
+вызывает неизвестную функцию, получает адрес другой функции,
+вызывает ее и, наконец, вызывает ShellExecuteA*/
+
 /* jsdec pseudo code output */
-/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x43db04 */
+/* Z:\Terminal... @ 0x43db04 */
 #include <stdint.h>
  
 int32_t fcn_0043db04 (int32_t arg_8h) {
-    int32_t var_f0h;
-    int32_t var_a0h;
-    int32_t var_50h;
-    edi = ecx;
+    int32_t var_f0h; /*Объявление переменной var_f0h*/
+    int32_t var_a0h; /*Объявление переменной var_a0h*/
+    int32_t var_50h; /*Объявление переменной var_50h*/
+    edi = ecx; /*Сохраняет значения регистров ecx, edx и eax в локальные переменные*/
     esi = edx;
     ebx = eax;
     eax = arg_8h;
     eax = &var_f0h;
     edx = edi;
-    eax = fcn_00407ccc ();
+    eax = fcn_00407ccc (); /*Использует функцию fcn_00407ccc для инициализации var_f0h, var_a0h и var_50h*/
     eax = &var_a0h;
     edx = esi;
     eax = fcn_00407ccc ();
     eax = &var_50h;
     edx = ebx;
     eax = fcn_00407ccc ();
-    eax = *(0x43eb28);
+    eax = *(0x43eb28); /*Получает адрес функции из 0x43eb28*/
     eax = *(eax);
     eax = fcn_0043d97c ();
-    ShellExecuteA (eax);
-    return eax;
+    ShellExecuteA (eax); /*Вызывает функцию ShellExecuteA с результатом предыдущего вызова в качестве параметра*/
+    return eax; /*Возвращает результат вызова ShellExecuteA*/
 }
 ```
 
