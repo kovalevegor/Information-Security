@@ -207,3 +207,70 @@ int32_t fcn_0040399c (void) {
     return eax; /*Возвращает значение eax*/ 
 }
 ```
+
+```assembly
+/* jsdec pseudo code output */
+/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x43d9a2 */
+#include <stdint.h>
+ 
+int32_t fcn_0043d9a0 (void) {
+    uint32_t var_4h_2;
+    uint32_t var_4h;
+    ebx = ecx;
+    *(esp) = edx;
+    esi = eax;
+    eax = *(0x43f7cc);
+    edi = *((eax + 0x60));
+    if (edi != 0) {
+        ecx = 0;
+        edx = var_4h_2;
+        eax = edi;
+        eax = fcn_0042010c (ebx);
+        eax--;
+        if (eax == 0) {
+            goto label_0;
+        }
+    }
+    ebp = *((esi + 0x38));
+    if (edi != ebp) {
+        if (ebp == 0) {
+            goto label_1;
+        }
+        ecx = 0;
+        edx = var_4h_2;
+        eax = ebp;
+        eax = fcn_0042010c (ebx);
+        eax--;
+        if (eax == 0) {
+            goto label_0;
+        }
+    }
+label_1:
+    eax = 0;
+    goto label_2;
+label_0:
+    al = 1;
+label_2:
+    var_4h = 1;
+    if (var_4h == 0) {
+        eax = ebx;
+        edx = *(0x429978);
+        al = fcn_00402dbc ();
+        if (al == 0) {
+            goto label_3;
+        }
+        if (*((ebx + 0x59)) == 0) {
+            goto label_3;
+        }
+        if (*((ebx + 0x50)) == 0) {
+            goto label_3;
+        }
+        dl = (*((ebx + 0x32)) != 0) ? 1 : 0;
+        eax = ebx;
+        fcn_0042a2b8 ();
+    }
+label_3:
+    al = var_4h;
+    return eax;
+}
+```
