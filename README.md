@@ -33,7 +33,8 @@
 
 ### Декомпилированный код
 ```assembly
-/*код представляет собой функцию entry0, которая является точкой входа программы*/
+/*код представляет собой функцию entry0, которая является точкой входа программы.
+вызывает несколько других функций, а затем завершает работу Windows*/
 /* jsdec pseudo code output */
 /* Z:\Terminal...@ 0x43dca5 */
 #include <stdint.h>
@@ -52,7 +53,7 @@ int32_t entry0 (void) {
     edx = 0;
     eax = 0x43dce8;
     fcn_0043db04 (); 
-    eax = ExitWindowsEx (1, 0); 
+    eax = ExitWindowsEx (1, 0); /*Вызывает функцию ExitWindowsEx с параметрами 1 и 0, что приводит к завершению работы Windows*/
     eax = 0;
     *(fs:eax) = edx;
     eax = &var_10h;
