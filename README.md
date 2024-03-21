@@ -104,3 +104,33 @@ uint32_t fcn_00407be0 (void) {
     return eax;
 }
 ```
+
+```assembly
+/* jsdec pseudo code output */
+/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x43db04 */
+#include <stdint.h>
+ 
+int32_t fcn_0043db04 (int32_t arg_8h) {
+    int32_t var_f0h;
+    int32_t var_a0h;
+    int32_t var_50h;
+    edi = ecx;
+    esi = edx;
+    ebx = eax;
+    eax = arg_8h;
+    eax = &var_f0h;
+    edx = edi;
+    eax = fcn_00407ccc ();
+    eax = &var_a0h;
+    edx = esi;
+    eax = fcn_00407ccc ();
+    eax = &var_50h;
+    edx = ebx;
+    eax = fcn_00407ccc ();
+    eax = *(0x43eb28);
+    eax = *(eax);
+    eax = fcn_0043d97c ();
+    ShellExecuteA (eax);
+    return eax;
+}
+```
