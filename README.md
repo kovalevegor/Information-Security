@@ -72,3 +72,20 @@ int32_t entry0 (void) {
 8. Вызывает функцию `fcn_004038b4`, передавая ей адрес `var_10h`.
 9. Возвращает значение `0`.
 
+```assembley
+/* jsdec pseudo code output */
+/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x405ec4 */
+#include <stdint.h>
+ 
+void fcn_00405ec4 (void) {
+    eax = GetModuleHandleA_1 (0, eax);
+    edx = 0x43e0a4;
+    *(0x43f4d4) = eax;
+    *((edx + 4)) = eax;
+    *((edx + 8)) = 0;
+    *((edx + 0xc)) = 0;
+    fcn_00405e78 ();
+    fcn_0040368c ();
+}
+```
+
