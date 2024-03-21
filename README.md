@@ -72,7 +72,7 @@ int32_t entry0 (void) {
 8. Вызывает функцию `fcn_004038b4`, передавая ей адрес `var_10h`.
 9. Возвращает значение `0`.
 
-```assembley
+```assembly
 /* jsdec pseudo code output */
 /* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x405ec4 */
 #include <stdint.h>
