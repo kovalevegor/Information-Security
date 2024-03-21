@@ -89,3 +89,18 @@ void fcn_00405ec4 (void) {
 }
 ```
 
+```assembly
+/* jsdec pseudo code output */
+/* Z:\Terminal\Edu\Academic\3Course\Информационная @ 0x407be0 */
+#include <stdint.h>
+ 
+uint32_t fcn_00407be0 (void) {
+    ebx = eax;
+    eax = GetCurrentDirectoryA (0x104, esp);
+    ecx = eax;
+    edx = esp;
+    eax = ebx;
+    fcn_0040399c ();
+    return eax;
+}
+```
