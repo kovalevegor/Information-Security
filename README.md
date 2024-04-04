@@ -54,13 +54,17 @@
 
 ![image](https://github.com/kovalevegor/Information-Security/assets/113568414/ec1f99ca-bdd0-42c0-988f-46a1d620d02d)
 
-При попытке доступа к данным категории `Особой важности` программы выдаст запрет на доступ
+При попытке доступа к данным категории `Особой важности` - `Будущее` программа выдаст запрет на доступ
 
 ![image](https://github.com/kovalevegor/Information-Security/assets/113568414/b75cc825-e32c-4826-9f39-687a118bc743)
 
 А если мы попробуем получить доступ к данным `Секретно` - `Жития святых`, то программа разрешит нам доступ
 
 ![image](https://github.com/kovalevegor/Information-Security/assets/113568414/473e2c95-8e31-450b-8709-7307f6d2f07d)
+
+Теперь попробуем изменить эти данные и видим, что нам это удалось, так как пользователю `King` открыт доступ на изменение данный категории не выше `Секретно`
+
+![image](https://github.com/kovalevegor/Information-Security/assets/113568414/865dde6a-0b35-4175-9223-77baa2b58d82)
 
 
 
