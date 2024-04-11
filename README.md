@@ -66,7 +66,7 @@ OoS	|XSS	|СЗД	|0.5
 
 
 $$
-R_{mk}=\sum_{l=1}^d\sum_{r=1}^j Cmlr * S_k
+R_{mk}=\sum_{l=1}^d\sum_{r=1}^j C_{mlr} * S_k
 $$
 
 $$
