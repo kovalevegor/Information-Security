@@ -17,8 +17,14 @@
 какие парковочные места присутствуют в непосредственной близости от защищаемого
 объекта.
 
-Apple Inc. 
+<img width="81" height="100" align="left" style="float: left; margin: 0 10px 0 0;" alt="Cutter logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png"> Для корпорации `Apple Inc.` 
+
+<br>
+<br>
 
 37°20'07.0"N 122°00'33.0"W
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d8972.989797147386!2d-122.00617579568622!3d37.33230454355989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDIwJzA3LjAiTiAxMjLCsDAwJzMzLjAiVw!5e0!3m2!1sru!2sru!4v1713339400683!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+![Ресурс 1@4x](https://github.com/kovalevegor/Information-Security/assets/113568414/5c73ba3f-7755-4a67-be95-cdef648be34a)
+
+
+https://static.wikia.nocookie.net/ipod/images/3/3e/Apple_Store_promo_logo.png/revision/latest?cb=20230410061233
