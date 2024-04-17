@@ -13,7 +13,5 @@
 
 
 
-![Ресурс 1@4x](https://github.com/kovalevegor/Information-Security/assets/113568414/5c73ba3f-7755-4a67-be95-cdef648be34a)
-
-
 https://static.wikia.nocookie.net/ipod/images/3/3e/Apple_Store_promo_logo.png/revision/latest?cb=20230410061233
+![Ресурс 2](https://github.com/kovalevegor/Information-Security/assets/113568414/77fe092f-0ebe-49c0-a4a9-a294e87902fb)
