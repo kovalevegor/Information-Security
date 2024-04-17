@@ -2,8 +2,7 @@
 
 `Apple Inc.` 
 
-<img width="81" height="100" align="left" style="float: left; margin: 10px 10px 10px 10px;" alt="apple logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png"> 
-**Apple Park** — действующая штаб-квартира компании Apple в Купертино, Калифорния. Координаты: 37°20'07.0"N 122°00'33.0"W. 
+<img width="81" height="100" align="left" style="float: left; margin: 10px 10px 10px 10px;" alt="apple logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png"> **Apple Park** — действующая штаб-квартира компании Apple в Купертино, Калифорния. Координаты: 37°20'07.0"N 122°00'33.0"W. Офис занимает 71 гектар. Только в одном круговом четырёхэтажном здании площадью 260 000 м² работает более 12 000 сотрудников.
 
 
 
