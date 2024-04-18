@@ -46,7 +46,6 @@
 
 | | |
 ---|---|---
-
 1|Twinkle Twinkle Daycare |Ясли
 2 |Pari's Salon |салон красоты
 3| Lucky Star Family Home Care| Ясли
