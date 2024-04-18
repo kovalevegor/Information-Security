@@ -44,16 +44,39 @@
 
 В радиусе 1 км. от границ здания находятся следующие компании и заведения:
 
-| | |
+| | | |
 ---|---|---
 1|Twinkle Twinkle Daycare |Ясли
-2 |Pari's Salon |салон красоты
-3| Lucky Star Family Home Care| Ясли
-4| Sunny House Daycare 中英雙語日托班 |ясли
-5|Total Kids Learning Home |ясли
-6|Dalmatian Realty of Silicon Valley |агентство недвижимости
-7|Little Learners Child Care |агентство по уходу за ребенком
-8. 
+2|Pari's Salon |Салон красоты
+3|Lucky Star Family Home Care| Ясли
+4|Sunny House Daycare 中英雙語日托班 |Ясли
+5|Total Kids Learning Home |Ясли
+6|Dalmatian Realty of Silicon Valley |Агентство недвижимости
+7|Little Learners Child Care |Агентство по уходу за ребенком
+8|Tongyan Beauty Spa| Салон красоты
+9|7 Leaves Cafe|Кафе
+10|Good Samaritan United Methodist Church|Объединенная методистская церковь
+11|EVgo Charging Station|Станция зарядки электромобилей
+12|Купертино Виллидж|Торговый центр
+13|KeyPoint Credit Union|Кредитный союз
+14|Duke of Edinburgh|Паб
+15|Global Luxury Suites in Cupertino|Апартаменты с обслуживанием
+16|Ариосо Апартментс|Агентство по аренде жилья
+17|Hilton Garden Inn Cupertino|Отель
+18|Courtyard by Marriott San Jose Cupertino|Отель
+19|Kathye Castañeda, M.S., CCC-SLP|Логопед
+20|Hyatt House San Jose / Cupertino|Отель
+21|Benihana|Ресторан японской кухни
+22|Ice Center (Cupertino)|Каток
+23|Golden State Elite Hockey|Хоккейный клуб
+24|Manmeet Daycare Pre School & After School Santa Clara, CA|Дошкольное учреждение
+25|Elite Master Cal Builders Inc.|Генеральный подрядчик
+26|Popsicle Land|Ясли
+27|Little Dragon Bilingual Learning Center|Учебный центр
+28|My First Station Daycare|Ясли
+29|Kona Kai Swim & Racquet Club|Секция плавания
+30|Emergency Room | Kaiser Permanente Santa Clara Medical Center and Medical Offices|Пункт неотложной помощи
+31|Kaiser Permanente Santa Clara, Department 120, Nuclear Medicine|Больница
 
 
 
