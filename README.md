@@ -44,9 +44,17 @@
 
 В радиусе 1 км. от границ здания находятся следующие компании и заведения:
 
-1. Twinkle Twinkle Daycare (Ясли)
-2. Pari's Salon (Салон красоты)
-3. Lucky Star Family Home Care 
+| | |
+---|---|---
+
+1|Twinkle Twinkle Daycare |Ясли
+2 |Pari's Salon |салон красоты
+3| Lucky Star Family Home Care| Ясли
+4| Sunny House Daycare 中英雙語日托班 |ясли
+5|Total Kids Learning Home |ясли
+6|Dalmatian Realty of Silicon Valley |агентство недвижимости
+7|Little Learners Child Care |агентство по уходу за ребенком
+8. 
 
 
 
