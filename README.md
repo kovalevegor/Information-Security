@@ -42,4 +42,29 @@
 ## Расположение на местности
 ![Ресурс 2](https://github.com/kovalevegor/Information-Security/assets/113568414/de914a2d-166f-4529-80b6-fd0e5ca55919)
 
+В радиусе 1 км. от границ здания находятся следующие компании и заведения:
+
+1. Twinkle Twinkle Daycare (Ясли)
+2. Pari's Salon (Салон красоты)
+3. Lucky Star Family Home Care 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
