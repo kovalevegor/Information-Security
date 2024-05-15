@@ -1,12 +1,6 @@
 # <p align = "center">Стандарты аутентичного шифрования</p>
 
-[crypto++](https://www.cryptopp.com/)
-
-[help](https://www.youtube.com/watch?v=5XE4zEN-WKg)
-
-[AES](https://www.cryptopp.com/wiki/Advanced_Encryption_Standard)
-
-[git lib rep](https://github.com/weidai11/cryptopp)
+[crypto++](https://www.cryptopp.com/) [help](https://www.youtube.com/watch?v=5XE4zEN-WKg) [AES](https://www.cryptopp.com/wiki/Advanced_Encryption_Standard) [git lib rep](https://github.com/weidai11/cryptopp)
 
 Ниже показан пример обеспечивающий конфиденциальность и аутентичности для блочного шифра в режиме CBC и HMAC. Похожий алгоритм используется в IPSec. Сначала данные приводятся к зашифрованному виду, после чего к ним добалвяется код аутентификации. Тег аутентификации помещается в конце сообщения.
 
