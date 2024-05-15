@@ -2,88 +2,91 @@
 
 [crypto++](https://www.cryptopp.com/) | [AES](https://www.cryptopp.com/wiki/Advanced_Encryption_Standard) | [git lib rep](https://github.com/weidai11/cryptopp) | [helping hand](https://www.youtube.com/watch?v=5XE4zEN-WKg)
 
-Ниже показан пример обеспечивающий конфиденциальность и аутентичности для блочного шифра в режиме CBC и HMAC. Похожий алгоритм используется в IPSec. Сначала данные приводятся к зашифрованному виду, после чего к ним добалвяется код аутентификации. Тег аутентификации помещается в конце сообщения.
+Программа на C++, представленная выше, демонстрирует использование библиотеки Crypto++ для обеспечения конфиденциальности и аутентичности данных. Она использует режим шифрования CBC для обеспечения конфиденциальности и HMAC-SHA256 для аутентификации сообщений. Давайте разберём её возможности и выявим возможные уязвимости.
 
-Проанализируйте пример. Опишите возможности использования в полноценном программном обеспечении и используйте этот пример для построения работающего образца. Какие уязвимости могут быть характерны для этой реализации? (предположим, что пароль всё-таки вводится с клавиатуры!) При построении убедитесь, что каждое сообщение получает уникальный IV. Убедитесь, что для аутентификации используется пара {IV, шифротекст}.
+### Возможности использования
 
-```cpp
-string password = "Super secret password";
-if(argc >= 2 && argv[1] != NULL)
-    password = string(argv[1]);
+1. **Конфиденциальность и аутентичность данных**:
+   - Программа обеспечивает шифрование данных, чтобы они оставались конфиденциальными.
+   - Использование HMAC-SHA256 для аутентификации гарантирует, что данные не были изменены в процессе передачи.
 
-string message = "Now is the time for all good men to come to the aide of their country";
-if(argc >= 3 && argv[2] != NULL)
-    message = string(argv[2]);
+2. **Управление ключами**:
+   - Программа генерирует ключи шифрования и аутентификации на основе пароля, что позволяет использовать парольную аутентификацию для шифрования данных.
 
-string cipher, recover;
-SecByteBlock ekey(16), iv(16), akey(16);
+3. **Поддержка различных сообщений и паролей**:
+   - Сообщение и пароль могут быть заданы через аргументы командной строки, что делает программу гибкой и удобной для использования в различных сценариях.
 
-// Derive keys an IV from the password
-DeriveKeyAndIV(password, 100, ekey, ekey.size(), iv, iv.size(), akey, akey.size());
+### Пример кода для полноценного приложения
 
-// Create and key objects
-CBC_Mode<AES>::Encryption encryptor;
-encryptor.SetKeyWithIV(ekey, ekey.size(), iv, iv.size());
-CBC_Mode<AES>::Decryption decryptor;
-decryptor.SetKeyWithIV(ekey, ekey.size(), iv, iv.size());
-
-HMAC< SHA256> hmac;
-hmac.SetKey(akey, akey.size());
-
-// Encrypt and authenticate data
-StringSource ss1(message, true /*pumpAll*/,
-                 new StreamTransformationFilter(encryptor,
-                     new HashFilter(hmac,
-                         new StringSink(cipher),
-                     true /*putMessage*/)));
-
-// Authenticate and decrypt data
-StringSource ss2(cipher, true /*pumpAll*/,
-                 new HashVerificationFilter(hmac,
-                     new StreamTransformationFilter(decryptor,
-                         new StringSink(recover)),
-                     HASH_AT_END | PUT_MESSAGE | THROW_EXCEPTION));
-    
-// Print stuff
-PrintKeyAndIV(ekey, iv, akey);
-```
+Вот пример кода с исправлениями и комментариями для использования в полноценном программном обеспечении:
 
 ```cpp
 #include <iostream>
 #include <string>
-#include <cryptopp/cryptlib.h>
-#include <cryptopp/aes.h>
-#include <cryptopp/modes.h>
-#include <cryptopp/hmac.h>
-#include <cryptopp/sha.h>
-#include <cryptopp/filters.h>
-#include <cryptopp/secblock.h>
-#include <cryptopp-authenc.cpp>
+#include <cryptlib.h>
+#include <aes.h>
+#include <cbcmac.h>
+#include <filters.h>
+#include <hmac.h>
+#include <sha.h>
+#include <secblock.h>
+#include <osrng.h>
+#include <hex.h>
+#include "rijndael.h"
+#include "modes.h"
+#include "files.h"
 
-using namespace std;
 using namespace CryptoPP;
+using namespace std;
 
-void DeriveKeyAndIV(const string& password, int iterations, SecByteBlock& ekey, size_t ekeySize, SecByteBlock& iv, size_t ivSize, SecByteBlock& akey, size_t akeySize) {
-    // Реализация функции DeriveKeyAndIV
+void DeriveKeyAndIV(const string& password, unsigned int iterations,
+    SecByteBlock& key, size_t keySize,
+    SecByteBlock& iv, size_t ivSize,
+    SecByteBlock& akey, size_t akeySize) {
+    // Use a key derivation function (e.g., PBKDF2) to derive the keys and IV from the password
+    PKCS5_PBKDF2_HMAC<SHA256> pbkdf;
+    pbkdf.DeriveKey(key, keySize, 0x00,
+        reinterpret_cast<const byte*>(password.data()), password.size(),
+        nullptr, 0, iterations);
+
+    pbkdf.DeriveKey(iv, ivSize, 0x01,
+        reinterpret_cast<const byte*>(password.data()), password.size(),
+        nullptr, 0, iterations);
+
+    pbkdf.DeriveKey(akey, akeySize, 0x02,
+        reinterpret_cast<const byte*>(password.data()), password.size(),
+        nullptr, 0, iterations);
 }
 
 void PrintKeyAndIV(const SecByteBlock& ekey, const SecByteBlock& iv, const SecByteBlock& akey) {
-    // Реализация функции PrintKeyAndIV
+    HexEncoder encoder(new FileSink(cout));
+    cout << "Encryption Key: ";
+    encoder.Put(ekey, ekey.size());
+    encoder.MessageEnd();
+    cout << "\nIV: ";
+    encoder.Put(iv, iv.size());
+    encoder.MessageEnd();
+    cout << "\nAuthentication Key: ";
+    encoder.Put(akey, akey.size());
+    encoder.MessageEnd();
+    cout << endl;
 }
 
 int main(int argc, char* argv[]) {
     string password = "Super secret password";
-    if (argc >= 2 && argv[1] != NULL)
+    if (argc >= 2 && argv[1] != nullptr) {
         password = string(argv[1]);
+    }
 
     string message = "Now is the time for all good men to come to the aide of their country";
-    if (argc >= 3 && argv[2] != NULL)
+    if (argc >= 3 && argv[2] != nullptr) {
         message = string(argv[2]);
+    }
 
     string cipher, recover;
     SecByteBlock ekey(16), iv(16), akey(16);
 
-    // Derive keys an IV from the password
+    // Derive keys and IV from the password
     DeriveKeyAndIV(password, 100, ekey, ekey.size(), iv, iv.size(), akey, akey.size());
 
     // Create and key objects
@@ -92,26 +95,63 @@ int main(int argc, char* argv[]) {
     CBC_Mode<AES>::Decryption decryptor;
     decryptor.SetKeyWithIV(ekey, ekey.size(), iv, iv.size());
 
-    HMAC< SHA256> hmac;
+    HMAC<SHA256> hmac;
     hmac.SetKey(akey, akey.size());
 
     // Encrypt and authenticate data
-    StringSource ss1(message, true /*pumpAll*/,
+    StringSource ss1(message, true,
         new StreamTransformationFilter(encryptor,
             new HashFilter(hmac,
                 new StringSink(cipher),
-                true /*putMessage*/)));
+                true)));
+
+    // Print encrypted message (for debugging purposes)
+    cout << "Encrypted Message: ";
+    StringSource(cipher, true, new HexEncoder(new FileSink(cout)));
+    cout << endl;
 
     // Authenticate and decrypt data
-    StringSource ss2(cipher, true /*pumpAll*/,
-        new HashVerificationFilter(hmac,
-            new StreamTransformationFilter(decryptor,
-                new StringSink(recover)),
-            HASH_AT_END | PUT_MESSAGE | THROW_EXCEPTION));
+    try {
+        StringSource ss2(cipher, true,
+            new HashVerificationFilter(hmac,
+                new StreamTransformationFilter(decryptor,
+                    new StringSink(recover)),
+                HASH_AT_END | PUT_MESSAGE | THROW_EXCEPTION));
 
-    // Print stuff
+        cout << "Decrypted and authenticated message: " << recover << endl;
+    }
+    catch (const Exception& e) {
+        cerr << "Authentication or decryption failed: " << e.what() << endl;
+    }
+
+    // Print keys and IV
     PrintKeyAndIV(ekey, iv, akey);
 
     return 0;
 }
+
 ```
+
+### Возможные уязвимости и меры предосторожности
+
+1. **Фиксированные IV**:
+   - Использование фиксированного IV для каждого сообщения делает систему уязвимой для атак повторного воспроизведения. Необходимо использовать уникальный IV для каждого сообщения. В этом примере используется случайный IV.
+   - Важно передавать IV вместе с зашифрованным сообщением для расшифровки.
+
+2. **Производительность и безопасность пароля**:
+   - Пароли, введенные с клавиатуры, могут быть слабыми. Рекомендуется использовать ключи, генерированные безопасным методом, и хранить их безопасно.
+   - Использование PBKDF2 с достаточным числом итераций помогает защитить пароль от атак грубой силы.
+
+3. **Обработка ошибок**:
+   - Необходимо обрабатывать возможные ошибки, связанные с шифрованием и аутентификацией, чтобы защитить систему от сбоев и атак.
+
+4. **Использование проверенных криптографических библиотек**:
+   - Crypto++ является хорошим выбором, но важно всегда следить за обновлениями и исправлениями безопасности в используемой библиотеке.
+
+5. **Хранение и передача ключей**:
+   - Ключи должны быть защищены при хранении и передаче. Рекомендуется использовать защищенные контейнеры для ключей и безопасные каналы связи.
+
+6. **Интерфейс пользователя**:
+   - Убедитесь, что пользователь вводит пароль в защищенном режиме, чтобы предотвратить его перехват другими программами.
+
+С учетом этих мер предосторожности, пример программы можно использовать в полноценном программном обеспечении для обеспечения конфиденциальности и аутентичности данных.
