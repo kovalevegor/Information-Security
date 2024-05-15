@@ -35,6 +35,7 @@
 #include "rijndael.h"
 #include "modes.h"
 #include "files.h"
+#include <pwdbased.h>
 
 using namespace CryptoPP;
 using namespace std;
@@ -86,6 +87,10 @@ int main(int argc, char* argv[]) {
     string cipher, recover;
     SecByteBlock ekey(16), iv(16), akey(16);
 
+    // Generate a random IV
+    AutoSeededRandomPool prng;
+    prng.GenerateBlock(iv, iv.size());
+
     // Derive keys and IV from the password
     DeriveKeyAndIV(password, 100, ekey, ekey.size(), iv, iv.size(), akey, akey.size());
 
@@ -116,7 +121,9 @@ int main(int argc, char* argv[]) {
             new HashVerificationFilter(hmac,
                 new StreamTransformationFilter(decryptor,
                     new StringSink(recover)),
-                HASH_AT_END | PUT_MESSAGE | THROW_EXCEPTION));
+                HashVerificationFilter::HASH_AT_END |
+                HashVerificationFilter::PUT_MESSAGE |
+                HashVerificationFilter::THROW_EXCEPTION));
 
         cout << "Decrypted and authenticated message: " << recover << endl;
     }
@@ -129,7 +136,20 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+```
 
+### Результат работы программы для приведенного сообщения
+
+```bash
+Encrypted Message: 920D365894661A48B81F524F28D5165FA9F5EF6BFC25DBF4BC2B4D97706837C108D55E33DEF19378627E69AAB6413B3F37316FBAFAFDD8164C3A1E30651009151E5054E1D00BAF5B37A96B87B183721B403563DC6EA21A408431A2FC51F7770964B425FB860E9978D1E97E70FFBAFE83
+Decrypted and authenticated message: Now is the time for all good men to come to the aide of their country
+Encryption Key: CF01289A38B86A65C87C21A6D18C894A
+IV: CF01289A38B86A65C87C21A6D18C894A
+Authentication Key: CF01289A38B86A65C87C21A6D18C894A
+
+Z:\Terminal\Edu\Academic...\2.3Crypto.exe (process 26056) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
 ```
 
 ### Возможные уязвимости и меры предосторожности
