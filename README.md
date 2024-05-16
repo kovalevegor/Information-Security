@@ -98,7 +98,6 @@ int main(int argc, char* argv[]) {
     CBC_Mode<AES>::Decryption decryptor;              // Создание объекта расшифрования AES в режиме CBC
     decryptor.SetKeyWithIV(ekey, ekey.size(), iv, iv.size());  // Установка ключа и вектора инициализации для объекта расшифрования
 
-```cpp
     hmac.SetKey(akey, akey.size());                         // Установка ключа аутентификации для объекта HMAC
 
     // Encrypt and authenticate data
@@ -134,7 +133,6 @@ int main(int argc, char* argv[]) {
 
     return 0;                                                  // Возврат нуля, указывающего на успешное завершение программы
 }
-```
 ```
 
 ### Результат работы программы для приведенного сообщения
