@@ -1,6 +1,6 @@
 # <p align = "center">Факторы, воздействующие на информацию</p>
 
-[ГОСТ Р 51275-2006]()
+[ГОСТ Р 51275-2006](https://github.com/kovalevegor/Information-Security/blob/main/ГОСТ%20Р%2051275-2006.md)
 
 [ФСТЭК](https://bdu.fstec.ru/threat?ajax=threats&size=100)
 
