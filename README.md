@@ -1,6 +1,6 @@
 # <p align = "center">Факторы, воздействующие на информацию</p>
 
-[ГОСТ Р 51275-2006](https://docs.cntd.ru/document/1200057516)
+[ГОСТ Р 51275-2006]([https://docs.cntd.ru/document/1200057516](https://rostest.info/gost/001.001.040.001/gost-r-51275-2006/))
 
 [ФСТЭК](bdu.fstec.ru)
 
