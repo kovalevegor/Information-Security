@@ -1,13 +1,5 @@
 # <p align = "center">Факторы, воздействующие на информацию</p>
 
-Изучить ГОСТ Р 51275-2006 "факторы, воздействующие на информацию" (http://docs.cntd.ru/document/gost-r-51275-2006)
-
-Сопоставить факторы с банком данных угроз (bdu.fstec.ru)
-
-Привести примеры качеств, нарушаемых при реализации факторов. Привести примеры сценариев нарушения защищенности для этих факторов. Оформить результат в виде таблицы.
-
-ttps://github.com/kovalevegor/Information-Security/blob/main/ГОСТ%20Р%2051275-2006.md
-
 [ГОСТ Р 51275-2006](https://github.com/kovalevegor/Information-Security/blob/main/ГОСТ%20Р%2051275-2006.md)
 
 [ФСТЭК](https://bdu.fstec.ru/threat?ajax=threats&size=100)
